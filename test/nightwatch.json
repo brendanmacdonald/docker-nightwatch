@@ -3,6 +3,7 @@
   "output_folder": "reports",
   "src_folders": ["tests"],
   "page_objects_path": ["page"],
+  "launch_url": "http://localhost",
   "test_settings": {
     "default": {
       "screenshots": {
@@ -11,11 +12,16 @@
         "path": "screenshots"
       }
     },
-    "dev": {
-      "launch_url": "http://localhost",
+    "chrome": {
       "selenium_host": "chromedriver",
       "desiredCapabilities": {
         "browserName": "chrome"
+      }
+    },
+    "firefox": {
+      "selenium_host": "firefoxdriver",
+      "desiredCapabilities": {
+        "browserName": "firefox"
       }
     }
   }
