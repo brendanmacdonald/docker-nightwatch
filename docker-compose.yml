@@ -1,0 +1,15 @@
+version: '2.2'
+services:
+  chromedriver:
+    image: selenium/standalone-chrome:latest
+  nightwatch:
+    image: blueimp/nightwatch:0.9
+    init: true
+    depends_on:
+      - chromedriver
+    environment:
+      - WAIT_FOR_HOSTS=chromedriver:4444 
+    links:
+      - chromedriver
+    volumes:
+      - ./test:/home/node

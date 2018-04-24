@@ -1,0 +1,22 @@
+{
+  "globals_path": "",
+  "output_folder": "reports",
+  "src_folders": ["tests"],
+  "page_objects_path": ["page"],
+  "test_settings": {
+    "default": {
+      "screenshots": {
+        "enabled": true,
+        "on_failure": true,
+        "path": "screenshots"
+      }
+    },
+    "dev": {
+      "launch_url": "http://localhost",
+      "selenium_host": "chromedriver",
+      "desiredCapabilities": {
+        "browserName": "chrome"
+      }
+    }
+  }
+}
