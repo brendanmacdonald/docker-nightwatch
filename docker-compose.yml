@@ -1,17 +1,23 @@
-version: '2.2'
+# To execute this docker-compose yml file use docker-compose -f <file_name> up
+# Add the "-d" flag at the end for deattached execution
+version: "3"
 services:
-  chromedriver:
-    image: selenium/standalone-chrome:latest
-  firefoxdriver:
-    image: selenium/standalone-firefox:latest
-  nightwatch:
-    image: blueimp/nightwatch:0.9
-    #init: true
+  hub:
+    image: selenium/hub:latest
+    container_name: hub
+    ports:
+      - "4444:4444"
+  chrome:
+    image: selenium/node-chrome:latest
     depends_on:
-      - chromedriver
-      - firefoxdriver
+      - hub
     environment:
-      - WAIT_FOR_HOSTS=chromedriver:4444 
-      - WAIT_FOR_HOSTS=firefoxdriver:4444 
-    volumes:
-      - ./test:/home/node
+      - HUB_HOST=hub
+      - HUB_PORT=4444
+  firefox:
+    image: selenium/node-firefox:latest
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+      - HUB_PORT=4444

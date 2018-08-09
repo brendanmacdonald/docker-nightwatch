@@ -3,10 +3,6 @@ Tests run on chrome and firefox.
 Launch tests with
 
 ```
-docker-compose run --rm nightwatch --env chrome,firefox
+npm run test
 ```
 
-Close Docker container with
-```
-docker-compose down
-```

@@ -1,8 +1,8 @@
 {
   "globals_path": "",
   "output_folder": "reports",
-  "src_folders": ["tests"],
-  "page_objects_path": ["page"],
+  "src_folders": ["./test/tests"],
+  "page_objects_path": ["./test/page"],
   "launch_url": "http://localhost",
   "test_settings": {
     "default": {
@@ -13,13 +13,11 @@
       }
     },
     "chrome": {
-      "selenium_host": "chromedriver",
-      "desiredCapabilities": {
+       "desiredCapabilities": {
         "browserName": "chrome"
       }
     },
     "firefox": {
-      "selenium_host": "firefoxdriver",
       "desiredCapabilities": {
         "browserName": "firefox"
       }

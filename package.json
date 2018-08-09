@@ -1,0 +1,23 @@
+{
+  "name": "docker-nightwatch",
+  "version": "1.0.0",
+  "description": "Tests run on chrome and firefox.",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "pretest": "docker-compose -f docker-compose.yml up -d",
+    "test": "sleep 10 && nightwatch -e chrome test/tests/",
+    "posttest": "docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendanmacdonald/docker-nightwatch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brendanmacdonald/docker-nightwatch/issues"
+  },
+  "homepage": "https://github.com/brendanmacdonald/docker-nightwatch#readme"
+}
